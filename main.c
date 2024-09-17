@@ -44,25 +44,25 @@ void stored(TDeque *d, int lado, char elem) {
 
     // compara se o lado escolhido é o começo do deque ou não
     switch (lado) {
-    case 0:// se for o começo
-        // joga todos os elementos pra esquerda
-        for (int i = d->rear + 1; i > d->front; i--) { // o for começa no rear + 1 e vai diminuindo até ficar igual o front
-            // como o rear + 1 é um espaço vazio
-            // se atribui a ele o valor do anterior
-            d->vet[i] = d->vet[i - 1];
-        }
+        case 0:// se for o começo
+            // joga todos os elementos pra esquerda
+            for (int i = d->rear + 1; i > d->front; i--) { // o for começa no rear + 1 e vai diminuindo até ficar igual o front
+                // como o rear + 1 é um espaço vazio
+                // se atribui a ele o valor do anterior
+                d->vet[i] = d->vet[i - 1];
+            }
 
-        // agora que o front está com um espaço livre
-        // atribuimos o elem ao indice do front
-        d->vet[d->front] = elem;
-        // e ajustamos a diferença do rear porque após o for, ele ficou no penultimo numero e não no ultimo
-        d->rear++;
-        break;
-    default: // se for no fim
+            // agora que o front está com um espaço livre
+            // atribuimos o elem ao indice do front
+            d->vet[d->front] = elem;
+            // e ajustamos a diferença do rear porque após o for, ele ficou no penultimo numero e não no ultimo
+            d->rear++;
+            break;
+        default: // se for no fim
         // apenas aumentamos o rear, atribuimos ao vetor o elem
-        d->rear++;
-        d->vet[d->rear] = elem;
-        break;
+            d->rear++;
+            d->vet[d->rear] = elem;
+            break;
     }
 }
 
@@ -103,7 +103,7 @@ char retrieved(TDeque *d, int lado) {
 
             // retorna o elem
             return elem;
-        }break;
+        } break;
     }
 }
 
